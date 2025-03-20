@@ -5,19 +5,171 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resumify - Scan and Review Your Resume</title>
-    <meta name="description" content="Analyze your resume, get personalized interview questions, and improve your job application success with Resumify." />
-    <meta name="author" content="Resumify" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">
+        <h1>Resumify</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#upload"><i class="fas fa-upload"></i> Upload Resume</a>
+          </li>
+          <li>
+            <a href="#scores"><i class="fas fa-chart-line"></i> View Past Score</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+      <div class="container">
+        <h2>Scan Your Resume and Answer Relevant Questions</h2>
+        <p>
+          Resumify helps analyze your resume and generate relevant questions based
+          on its content. Answer these questions to improve your resume and
+          prepare for interviews effectively.
+        </p>
+        <a href="#upload" class="btn">Upload Your Resume</a>
+      </div>
+    </section>
+
+    <!-- Upload Resume Section -->
+    <section id="upload">
+      <div class="container">
+        <h2>Upload Your Resume</h2>
+        <p>
+          Upload your resume and Resumify will generate interview questions based
+          on your skills and experience.
+        </p>
+        <form id="upload-form">
+          <div class="file-input-container">
+            <input
+              type="file"
+              id="resume-file"
+              name="resume"
+              accept=".pdf,.docx,.txt"
+              required
+            />
+          </div>
+          <button type="submit" class="btn">Scan Resume</button>
+        </form>
+        <div id="questionnaire">
+          <h3>Questions Based on Your Resume:</h3>
+          <div id="questions-container"></div>
+          <button id="submit-answers" class="btn">Submit Answers</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- View Past Scores Section -->
+    <section id="scores">
+      <div class="container">
+        <h2>Review Your Past Scores</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Feedback</th>
+              </tr>
+            </thead>
+            <tbody id="score-history">
+              <tr>
+                <td>March 19, 2025</td>
+                <td>85%</td>
+                <td>Strong leadership skills, but add more achievements.</td>
+              </tr>
+              <tr>
+                <td>February 12, 2025</td>
+                <td>72%</td>
+                <td>Good technical skills, improve job descriptions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2>About Resumify</h2>
+        <p>
+          Resumify scans your resume and generates personalized questions based on
+          your skills and experience to help you prepare for interviews. Our AI-powered 
+          system analyzes the content of your resume and identifies key areas where you 
+          can improve your presentation and prepare better answers for interviews.
+        </p>
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-file-alt"></i>
+            <h3>Resume Analysis</h3>
+            <p>Get insights about your resume's strengths and weaknesses</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-question-circle"></i>
+            <h3>Custom Questions</h3>
+            <p>Practice with questions tailored to your experience</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Performance Tracking</h3>
+            <p>Track your improvement over time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Resumify. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
